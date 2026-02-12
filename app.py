@@ -6,16 +6,16 @@ from sklearn.tree import DecisionTreeClassifier
 # --- 1. THE DATA & MODEL ---
 # This is the same logic from your predictor.py
 data = {
-    'Topic_Code': [1, 2, 1, 3, 2, 3, 1, 2], 
-    'Lines_of_Code': [12, 45, 15, 80, 50, 120, 25, 35],
-    'Difficulty': [0, 2, 0, 2, 1, 2, 1, 1] 
+    'Topic_Code': [1, 2, 1, 3, 2, 3, 1, 2, 2, 3, 1], 
+    'Lines_of_Code': [12, 45, 15, 80, 50, 120, 25, 35, 40, 60, 30],
+    'Difficulty': [0, 2, 0, 2, 1, 2, 1, 1, 1, 1, 1] # Adding more Medium (1) examples
 }
 df = pd.DataFrame(data)
 
 X = df[['Topic_Code', 'Lines_of_Code']].values
 y = df['Difficulty'].values
 
-model = DecisionTreeClassifier()
+model = DecisionTreeClassifier(max_depth=3)
 model.fit(X, y)
 
 diff_map = {0: "Easy", 1: "Medium", 2: "Hard"}
@@ -25,7 +25,7 @@ topic_map = {"Array": 1, "Tree": 2, "DP": 3}
 st.set_page_config(page_title="LeetCode AI", page_icon="💻")
 
 st.title("🚀 LeetCode Difficulty Predictor")
-st.write("A 'Vibe Coder' project to predict problem difficulty using Machine Learning.")
+st.write("A project to predict problem difficulty using Machine Learning.")
 
 # User Inputs
 st.divider()
