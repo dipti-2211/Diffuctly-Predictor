@@ -26,7 +26,13 @@ st.set_page_config(page_title="LeetCode AI", page_icon="💻")
 
 st.title("🚀 LeetCode Difficulty Predictor")
 st.write("A project to predict problem difficulty using Machine Learning.")
-
+with st.sidebar:
+    st.image("https://github.com/dipti-2211.png", width=140) # Fetches your GitHub pfp
+    st.markdown("### About Me")
+    st.write("Aspiring Software Engineer & Vibe Coder.")
+    st.write("I build things that bridge the gap between complex logic and clean user experiences. Currently, I'm deep-diving into Data Structures & Algorithms (150+ LeetCode problems and counting!) and experimenting with Machine Learning to make the AI more interactive.")
+    
+    st.write("[GitHub CodeBase](https://github.com/dipti-2211/Diffuctly-Predictor)")
 # User Inputs
 st.divider()
 col1, col2 = st.columns(2)
